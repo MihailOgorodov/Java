@@ -1,7 +1,6 @@
 package org.example.homework1;
 
 import java.util.Random;
-import java.util.Arrays;
 
 public class hw1 {
     public static void main(String[] args) {
@@ -9,7 +8,7 @@ public class hw1 {
         int i = new Random().nextInt(0, 2001);
         System.out.printf("1. Случайное целое число = %d \n", i);
 //      2. Посчитать и сохранить в n номер старшего значащего бита выпавшего числа
-        int n = bitMax(i);
+        int n = Integer.toBinaryString(i).length();
         System.out.printf("2. Номер старшего значащего бита числа %d = %d \n", i, n);
 //      3. Найти все кратные n числа в диапазоне от i до Short.MAX_VALUE сохранить в массив m1.
         int count = 0;
@@ -48,13 +47,6 @@ public class hw1 {
 
 
     }
-
-    private static int bitMax(int x) {
-        int t = 1 << 30;
-        while (x < t) t >>= 1;
-        return t;
-    }
-
 
 }
 
