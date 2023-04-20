@@ -15,25 +15,21 @@ public class task1 {
     }
 
     public static String FindVars(String my_string) {
-        String[] line = my_string.split("");
-        int base = 0;
-        int power = 0;
+        my_string = my_string.replace(",", "");
+        String[] line = my_string.split(" ");
         double result = 0;
         for (int i = 0; i < line.length; i++) {
-            line[i] = line[i].replace(",", "");
             try {
-                Integer.parseInt(line[i]);
-                if (base == 0) {
-                    base = Integer.parseInt(line[i]);
-                } else {
-                    power = Integer.parseInt(line[i]);
-                }
+                int base = Integer.parseInt(line[i]);
+                int power = Integer.parseInt(line[i]);
+                result = Math.pow(base, power);
+                break;
             } catch (NumberFormatException e) {
                 continue;
             }
 
         }
-        result = Math.pow(base, power);
+
         return my_string + " " + String.valueOf(result);
     }
 }
