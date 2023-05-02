@@ -1,7 +1,6 @@
 package org.example.homework5;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /*
 Создать множество, ключ и значение строки. Добавить шесть элементов. Вывести в консоль значения. Добавить ко всем значениям символ "!".
@@ -39,9 +38,14 @@ public class task1 {
         }
         System.out.println(hm1);
 
-        for (String key : hm.keySet()) {
-            hm1.computeIfAbsent(key, v -> v + v);
-        }
+        hm1.putAll(hm);
+        hm1.remove("Two");
+        hm1.remove("Four");
+        hm1.remove("Five");
+
         System.out.println(hm1);
+
+
+
     }
 }
