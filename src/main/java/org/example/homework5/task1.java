@@ -38,14 +38,15 @@ public class task1 {
         }
         System.out.println(hm1);
 
-        hm1.putAll(hm);
-        hm1.remove("Two");
-        hm1.remove("Four");
-        hm1.remove("Five");
+        for (String item : hm1.keySet()) {
+            hm1.merge(item, hm.getOrDefault(item, ""), (newVal, tempVal) -> newVal + tempVal);
+        }
+
 
         System.out.println(hm1);
 
 
 
     }
+
 }
